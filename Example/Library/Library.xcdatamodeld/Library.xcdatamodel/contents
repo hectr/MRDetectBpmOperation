@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7701" systemVersion="14E46" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Album" representedClassName="MRAlbum" syncable="YES">
+        <attribute name="persistentID" optional="YES" attributeType="Integer 32" defaultValueString="0" indexed="YES" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <relationship name="artist" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Artist" inverseName="albums" inverseEntity="Artist" syncable="YES"/>
+        <relationship name="songs" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Song" inverseName="album" inverseEntity="Song" syncable="YES"/>
+    </entity>
+    <entity name="Artist" representedClassName="MRArtist" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="persistentID" optional="YES" attributeType="Integer 32" defaultValueString="0" indexed="YES" syncable="YES"/>
+        <relationship name="albums" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Album" inverseName="artist" inverseEntity="Album" syncable="YES"/>
+        <relationship name="songs" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Song" inverseName="artist" inverseEntity="Song" syncable="YES"/>
+    </entity>
+    <entity name="Artwork" representedClassName="MRArtwork" syncable="YES">
+        <attribute name="height" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="imageData" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="md5" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="width" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <relationship name="songs" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Song" inverseName="artwork" inverseEntity="Song" syncable="YES"/>
+    </entity>
+    <entity name="Composer" representedClassName="MRComposer" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="persistentID" optional="YES" attributeType="Integer 32" defaultValueString="0" indexed="YES" syncable="YES"/>
+        <relationship name="songs" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Song" inverseName="composer" inverseEntity="Song" syncable="YES"/>
+    </entity>
+    <entity name="Genre" representedClassName="MRGenre" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="persistentID" optional="YES" attributeType="Integer 32" defaultValueString="0" indexed="YES" syncable="YES"/>
+        <relationship name="songs" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Song" inverseName="genre" inverseEntity="Song" syncable="YES"/>
+    </entity>
+    <entity name="Song" representedClassName="MRSong" syncable="YES">
+        <attribute name="assetURLString" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="bpm" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="bpmOperation" optional="YES" transient="YES" syncable="YES"/>
+        <attribute name="duration" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="lastPlayTime" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="lyrics" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="persistentID" optional="YES" attributeType="Integer 32" defaultValueString="0" indexed="YES" syncable="YES"/>
+        <attribute name="rating" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <relationship name="album" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Album" inverseName="songs" inverseEntity="Album" syncable="YES"/>
+        <relationship name="artist" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Artist" inverseName="songs" inverseEntity="Artist" syncable="YES"/>
+        <relationship name="artwork" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Artwork" inverseName="songs" inverseEntity="Artwork" syncable="YES"/>
+        <relationship name="composer" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Composer" inverseName="songs" inverseEntity="Composer" syncable="YES"/>
+        <relationship name="genre" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Genre" inverseName="songs" inverseEntity="Genre" syncable="YES"/>
+    </entity>
+    <fetchRequest name="Album" entity="Album" predicateString="persistentID == $ALBUM_ID OR (title LIKE[cd] $ALBUM_TITLE AND (artist.persistentID == $ARTIST_ID OR artist.name LIKE[cd] $ARTIST_NAME OR artist == nil OR ($ARTIST_ID == 0 AND $ARTIST_NAME == &quot;&quot;)))"/>
+    <fetchRequest name="Artist" entity="Artist" predicateString="persistentID == &quot;$ARTIST_ID&quot; OR name LIKE[cd] $ARTIST_NAME"/>
+    <fetchRequest name="Artwork" entity="Artwork" predicateString="md5 == $MD5 OR ANY songs.title LIKE[cd] $SONG_TITLE OR ANY songs.persistentID == $SONG_ID"/>
+    <fetchRequest name="Composer" entity="Composer" predicateString="persistentID == $COMPOSER_ID OR name LIKE[cd] $COMPOSER_NAME"/>
+    <fetchRequest name="Genre" entity="Genre" predicateString="persistentID == $GENRE_ID OR name LIKE[cd] $GENRE_NAME"/>
+    <fetchRequest name="Song" entity="Song" predicateString="assetURLString == &quot;$SONG_URL&quot; OR persistentID == 0 OR (title LIKE[cd] $SONG_TITLE AND ($ARTIST_ID == 0 OR artist == nil OR artist.persistentID == $ARTIST_ID OR $ARTIST_NAME == &quot;&quot; OR artist.name LIKE[cd] $ARTIST_NAME) AND ($ALBUM_ID == 0 OR album == nil OR album.persistentID == $ALBUM_ID OR $ALBUM_TITLE == &quot;&quot; OR album.title LIKE[cd] $ALBUM_TITLE))"/>
+    <fetchRequest name="SongsWithBpmLimit" entity="Song" predicateString="bpm &gt;= $LOWER_LIMIT AND bpm &lt;= $UPPER_LIMIT"/>
+    <fetchRequest name="SongsWithSearchTerm" entity="Song" predicateString="title CONTAINS[cd] $SEARCH_TERM OR album.title CONTAINS[cd] $SEARCH_TERM OR artist.name CONTAINS[cd] $SEARCH_TERM OR genre.name CONTAINS[cd] $SEARCH_TERM OR composer.name CONTAINS[cd] $SEARCH_TERM"/>
+    <elements>
+        <element name="Album" positionX="-891" positionY="-1384" width="128" height="105"/>
+        <element name="Artist" positionX="-1001" positionY="-1210" width="128" height="105"/>
+        <element name="Artwork" positionX="-578" positionY="-1215" width="128" height="120"/>
+        <element name="Composer" positionX="-659" positionY="-1024" width="128" height="90"/>
+        <element name="Genre" positionX="-891" positionY="-972" width="128" height="90"/>
+        <element name="Song" positionX="-738" positionY="-1333" width="128" height="255"/>
+    </elements>
+</model>

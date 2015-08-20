@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="v5n-3h-667">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="qxg-US-8h7">
+            <objects>
+                <navigationController id="v5n-3h-667" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="J4v-wL-iMp">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="yg6-wc-Gpg" kind="relationship" relationship="rootViewController" id="xaz-8Q-5cX"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Aw5-Gk-0YA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-408" y="448"/>
+        </scene>
+        <!--Music-->
+        <scene sceneID="LSO-j0-sSq">
+            <objects>
+                <viewController id="yg6-wc-Gpg" customClass="MRMusicVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="cvz-4v-7m5"/>
+                        <viewControllerLayoutGuide type="bottom" id="3hu-6n-l81"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="k5r-5x-NFJ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="64" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="JdY-F9-Ix6">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <searchBar key="tableHeaderView" contentMode="redraw" id="2lk-n1-582">
+                                    <rect key="frame" x="0.0" y="64" width="600" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                    <textInputTraits key="textInputTraits" autocorrectionType="no"/>
+                                    <connections>
+                                        <outlet property="delegate" destination="yg6-wc-Gpg" id="eMZ-6r-5GM"/>
+                                    </connections>
+                                </searchBar>
+                                <connections>
+                                    <outlet property="dataSource" destination="yg6-wc-Gpg" id="xkz-hG-XeS"/>
+                                    <outlet property="delegate" destination="yg6-wc-Gpg" id="xm5-k6-pZh"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="JdY-F9-Ix6" firstAttribute="leading" secondItem="k5r-5x-NFJ" secondAttribute="leading" id="RDn-jE-sOr"/>
+                            <constraint firstAttribute="bottom" secondItem="JdY-F9-Ix6" secondAttribute="bottom" id="W4W-mp-KHK"/>
+                            <constraint firstItem="JdY-F9-Ix6" firstAttribute="top" secondItem="k5r-5x-NFJ" secondAttribute="top" id="Ynl-30-eBf"/>
+                            <constraint firstAttribute="trailing" secondItem="JdY-F9-Ix6" secondAttribute="trailing" id="uqe-cr-RhG"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Music" id="VRF-Za-NVm"/>
+                    <navigationItem key="navigationItem" title="Music" id="i4u-gl-44J">
+                        <barButtonItem key="leftBarButtonItem" systemItem="refresh" id="ehw-BX-LNx">
+                            <connections>
+                                <action selector="detectMissingBpmAction:" destination="yg6-wc-Gpg" id="UVM-zp-JYH"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="bDW-US-SAk">
+                            <connections>
+                                <action selector="addMusicAction:" destination="yg6-wc-Gpg" id="NAi-jQ-AJ5"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="searchDisplayController" destination="GDF-YT-JDa" id="yeW-Eb-TgZ"/>
+                        <outlet property="tableView" destination="JdY-F9-Ix6" id="c2p-mC-vyB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hay-kM-8YO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="GDF-YT-JDa">
+                    <connections>
+                        <outlet property="delegate" destination="yg6-wc-Gpg" id="cgC-0u-0tp"/>
+                        <outlet property="searchBar" destination="2lk-n1-582" id="GBo-ii-u72"/>
+                        <outlet property="searchContentsController" destination="yg6-wc-Gpg" id="vQk-ao-Ssm"/>
+                        <outlet property="searchResultsDataSource" destination="yg6-wc-Gpg" id="VPB-PE-6Dy"/>
+                        <outlet property="searchResultsDelegate" destination="yg6-wc-Gpg" id="rVQ-hH-q07"/>
+                    </connections>
+                </searchDisplayController>
+            </objects>
+            <point key="canvasLocation" x="215" y="448"/>
+        </scene>
+    </scenes>
+</document>
