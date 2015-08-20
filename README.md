@@ -7,7 +7,7 @@
 
 `MRDetectBpmOperation` is a concrete subclass of `NSOperation` that uses the [SoundTouch Audio Processing Library](http://www.surina.net/soundtouch/) for detecting BPM of a media resource.
 
-```
+```objc
     MRDetectBpmOperation *operation = [MRDetectBpmOperation bpmOperationWithAssetURL:fileURL];
     [operation setCompletionBlockWithSuccess:^(MROperation *operation) {
         NSLog(@"%f", ((MRDetectBpmOperation *)operation).bpm);
