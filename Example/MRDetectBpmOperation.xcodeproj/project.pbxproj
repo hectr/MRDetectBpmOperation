@@ -41,9 +41,11 @@
 		84BE25CD1B86480600064F65 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84BE25CC1B86480600064F65 /* CoreData.framework */; };
 		84BE25D11B86688200064F65 /* most_annoying_sound_ever-Ethan_Buck-1557665457.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 84BE25D01B86688200064F65 /* most_annoying_sound_ever-Ethan_Buck-1557665457.mp3 */; };
 		84BE25D31B86696200064F65 /* invalid.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 84BE25D21B86696200064F65 /* invalid.mp3 */; };
+		84D7B8121B86931E008974C9 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 84D7B8111B86931E008974C9 /* libc++.dylib */; };
+		84D7B8131B86960F008974C9 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 84D7B8111B86931E008974C9 /* libc++.dylib */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
-		EBFED038B2412EFDB88B7118 /* Pods_MRDetectBpmOperation_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D5338375E8227A779DFAC65 /* Pods_MRDetectBpmOperation_Example.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		F107A488D40D474C8CC022A7 /* Pods_MRDetectBpmOperation_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEAB0DBF08C41481A9B3436B /* Pods_MRDetectBpmOperation_Tests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		A22C86A3F575FBF6C298C71E /* libPods-MRDetectBpmOperation_Example.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EAFEAAEFF2E4CA99BA9AAF22 /* libPods-MRDetectBpmOperation_Example.a */; };
+		BFF722541EECBEC86AB82AFE /* libPods-MRDetectBpmOperation_Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F400A8EE4BA871D97EA2351 /* libPods-MRDetectBpmOperation_Tests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +60,7 @@
 
 /* Begin PBXFileReference section */
 		021F79FBEB6F13DF109B9306 /* Pods-MRDetectBpmOperation_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MRDetectBpmOperation_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MRDetectBpmOperation_Tests/Pods-MRDetectBpmOperation_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		1F400A8EE4BA871D97EA2351 /* libPods-MRDetectBpmOperation_Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MRDetectBpmOperation_Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FA41B7CBD76AAC5EFDD4809 /* Pods-MRDetectBpmOperation_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MRDetectBpmOperation_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-MRDetectBpmOperation_Example/Pods-MRDetectBpmOperation_Example.release.xcconfig"; sourceTree = "<group>"; };
 		5BF6CF57CDA6D096683B6AC2 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* MRDetectBpmOperation_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MRDetectBpmOperation_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -76,7 +79,6 @@
 		6003F5B9195388D20070C39A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6003F5BB195388D20070C39A /* Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tests.m; sourceTree = "<group>"; };
 		6BE8E77C440A1250C78364ED /* MRDetectBpmOperation.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = MRDetectBpmOperation.podspec; path = ../MRDetectBpmOperation.podspec; sourceTree = "<group>"; };
-		6D5338375E8227A779DFAC65 /* Pods_MRDetectBpmOperation_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MRDetectBpmOperation_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		84BE258E1B86458C00064F65 /* NSObject+mr_mock_method.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+mr_mock_method.h"; sourceTree = "<group>"; };
 		84BE258F1B86458C00064F65 /* NSObject+mr_mock_method.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+mr_mock_method.m"; sourceTree = "<group>"; };
 		84BE25921B86458C00064F65 /* MRManagedObjectContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRManagedObjectContext.h; sourceTree = "<group>"; };
@@ -117,10 +119,12 @@
 		84BE25CC1B86480600064F65 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		84BE25D01B86688200064F65 /* most_annoying_sound_ever-Ethan_Buck-1557665457.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "most_annoying_sound_ever-Ethan_Buck-1557665457.mp3"; sourceTree = "<group>"; };
 		84BE25D21B86696200064F65 /* invalid.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = invalid.mp3; sourceTree = "<group>"; };
+		84D7B80F1B8692FC008974C9 /* libMRDetectBpmOperation.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMRDetectBpmOperation.a; path = "Pods/../build/Debug-iphoneos/libMRDetectBpmOperation.a"; sourceTree = "<group>"; };
+		84D7B8111B86931E008974C9 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		AEAB0DBF08C41481A9B3436B /* Pods_MRDetectBpmOperation_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MRDetectBpmOperation_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B32E4E529864DBBC1033DAD2 /* Pods-MRDetectBpmOperation_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MRDetectBpmOperation_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MRDetectBpmOperation_Example/Pods-MRDetectBpmOperation_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		E92C83E7B87B912AB7FAC507 /* Pods-MRDetectBpmOperation_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MRDetectBpmOperation_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MRDetectBpmOperation_Tests/Pods-MRDetectBpmOperation_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		EAFEAAEFF2E4CA99BA9AAF22 /* libPods-MRDetectBpmOperation_Example.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MRDetectBpmOperation_Example.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED0DD630AA39DA6F2477195B /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -129,10 +133,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84D7B8121B86931E008974C9 /* libc++.dylib in Frameworks */,
 				6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */,
 				6003F592195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F58E195388D20070C39A /* Foundation.framework in Frameworks */,
-				EBFED038B2412EFDB88B7118 /* Pods_MRDetectBpmOperation_Example.framework in Frameworks */,
+				A22C86A3F575FBF6C298C71E /* libPods-MRDetectBpmOperation_Example.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,11 +145,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84D7B8131B86960F008974C9 /* libc++.dylib in Frameworks */,
 				84BE25CD1B86480600064F65 /* CoreData.framework in Frameworks */,
 				6003F5B0195388D20070C39A /* XCTest.framework in Frameworks */,
 				6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F5B1195388D20070C39A /* Foundation.framework in Frameworks */,
-				F107A488D40D474C8CC022A7 /* Pods_MRDetectBpmOperation_Tests.framework in Frameworks */,
+				BFF722541EECBEC86AB82AFE /* libPods-MRDetectBpmOperation_Tests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -176,13 +182,15 @@
 		6003F58C195388D20070C39A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				84D7B8111B86931E008974C9 /* libc++.dylib */,
+				84D7B80F1B8692FC008974C9 /* libMRDetectBpmOperation.a */,
 				84BE25CC1B86480600064F65 /* CoreData.framework */,
 				6003F58D195388D20070C39A /* Foundation.framework */,
 				6003F58F195388D20070C39A /* CoreGraphics.framework */,
 				6003F591195388D20070C39A /* UIKit.framework */,
 				6003F5AF195388D20070C39A /* XCTest.framework */,
-				6D5338375E8227A779DFAC65 /* Pods_MRDetectBpmOperation_Example.framework */,
-				AEAB0DBF08C41481A9B3436B /* Pods_MRDetectBpmOperation_Tests.framework */,
+				EAFEAAEFF2E4CA99BA9AAF22 /* libPods-MRDetectBpmOperation_Example.a */,
+				1F400A8EE4BA871D97EA2351 /* libPods-MRDetectBpmOperation_Tests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -330,7 +338,6 @@
 				6003F586195388D20070C39A /* Sources */,
 				6003F587195388D20070C39A /* Frameworks */,
 				6003F588195388D20070C39A /* Resources */,
-				2F7CB71B2CB84C74B08E119A /* Embed Pods Frameworks */,
 				6FA35E364CDDC3EB79B886FA /* Copy Pods Resources */,
 			);
 			buildRules = (
@@ -350,7 +357,6 @@
 				6003F5AA195388D20070C39A /* Sources */,
 				6003F5AB195388D20070C39A /* Frameworks */,
 				6003F5AC195388D20070C39A /* Resources */,
-				0CAB222148CF5BE50BEA6DDE /* Embed Pods Frameworks */,
 				ADCA100696376631D1839413 /* Copy Pods Resources */,
 			);
 			buildRules = (
@@ -421,36 +427,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0CAB222148CF5BE50BEA6DDE /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MRDetectBpmOperation_Tests/Pods-MRDetectBpmOperation_Tests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		2F7CB71B2CB84C74B08E119A /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MRDetectBpmOperation_Example/Pods-MRDetectBpmOperation_Example-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		6FA35E364CDDC3EB79B886FA /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -661,6 +637,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = "MRDetectBpmOperation/MRDetectBpmOperation-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
 				MODULE_NAME = ExampleApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -676,6 +656,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = "MRDetectBpmOperation/MRDetectBpmOperation-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
 				MODULE_NAME = ExampleApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;

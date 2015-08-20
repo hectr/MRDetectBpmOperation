@@ -18,11 +18,9 @@ PODS:
   - ErrorKit/UIKit (0.3.1):
     - ErrorKit/Core
   - MRDetectBpmOperation (0.0.1):
-    - MRDetectBpmOperation/Default (= 0.0.1)
-  - MRDetectBpmOperation/Default (0.0.1):
-    - MRDetectBpmOperation/MRDetectBpmOperation
+    - MRDetectBpmOperation/Operation (= 0.0.1)
+  - MRDetectBpmOperation/Operation (0.0.1):
     - MRDetectBpmOperation/SoundTouch
-  - MRDetectBpmOperation/MRDetectBpmOperation (0.0.1):
     - MROperation (~> 0.0.1)
   - MRDetectBpmOperation/SoundTouch (0.0.1)
   - MROperation (0.0.1)
@@ -37,7 +35,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   ErrorKit: c09a578bf6e11ba2eb35d7f7295014d8c355cf11
-  MRDetectBpmOperation: 13f595386bc3f47ca952324d5d858f20d955e778
+  MRDetectBpmOperation: 20d53140a7d0498a54b5ab8a70c3ba6ba8a7f2e3
   MROperation: f24d6abf14c287604459dca501dfa476ad27661a
 
 COCOAPODS: 0.38.2
