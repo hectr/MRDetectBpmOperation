@@ -4,3 +4,6 @@
 [submodule "Example/MRMockMethod"]
 	path = Example/MRMockMethod
 	url = https://gist.github.com/299d8474a74667f1cb58.git
+[submodule "submodules/MROperation"]
+	path = submodules/MROperation
+	url = https://github.com/hectr/MROperation.git

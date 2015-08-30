@@ -40,8 +40,9 @@ pod "MRDetectBpmOperation"
 
 Perform the following steps:
 
-- Add the **SoundTouch** library into your project (e.g. copy *External/soundtouch-1.9.0/include* and *External/soundtouch-1.9.0/source/SoundTouch* directories).
+- Add the **SoundTouch** library into your project (e.g. copy *external/soundtouch-1.9.0/include* and *External/soundtouch-1.9.0/source/SoundTouch* directories).
 - Add `ANDROID=1 SOUNDTOUCH_INTEGER_SAMPLES=1` to `GCC_PREPROCESSOR_DEFINITIONS` in your project settings.
+- Add the `MROperation` class into your project (e.g. copy *submodules/MROperation/MROperation* directory).
 - Copy *MRDetectBpmOperation* directory into your project.
 
 ## License
